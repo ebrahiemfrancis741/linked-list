@@ -15,7 +15,11 @@ function createLinkedList() {
       }
       this.size++;
     },
-    prepend: function (value) {},
+    prepend: function (value) {
+      let temp = this.head;
+      this.head = createNode(value);
+      this.head.next = temp;
+    },
     at: function (index) {},
     pop: function () {},
     contains: function (value) {},
@@ -42,6 +46,8 @@ function createLinkedList() {
 let list = createLinkedList();
 list.toString();
 list.append("apple");
+list.prepend("banana");
+list.prepend("orange");
 list.append("cat");
 list.append("parrot");
 list.append("hamster");
