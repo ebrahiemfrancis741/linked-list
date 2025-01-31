@@ -38,7 +38,17 @@ function createLinkedList() {
         return value;
       }
     },
-    pop: function () {},
+    pop: function () {
+      let node = this.head;
+      // loop until 2nd last element
+      for (let i = 1; i <= this.size - 2; i++) {
+        node = node.next;
+      }
+      // remove last element and make element before it the tail
+      node.next = null;
+      this.tail = node;
+      this.size--;
+    },
     contains: function (value) {},
     find: function (value) {},
     toString: function () {
@@ -61,14 +71,13 @@ function createLinkedList() {
 }
 
 let list = createLinkedList();
-list.toString();
 list.append("apple");
-list.prepend("banana");
-list.prepend("orange");
 list.append("cat");
 list.append("parrot");
 list.append("hamster");
 list.append("snake");
 list.append("turtle");
+list.pop();
+list.pop();
+list.pop();
 list.toString();
-console.log(list.at(2));
