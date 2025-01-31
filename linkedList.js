@@ -110,7 +110,37 @@ function createLinkedList() {
         }
       }
     },
-    removeAt: function (index) {},
+    removeAt: function (index) {
+      let node = this.head;
+      let prevNode;
+
+      if (index < 0 || index > this.size - 1) {
+        return undefined;
+      }
+
+      /*
+        if index 0 or equal to this.size - 1, its a special 
+        case, that requres reassigning the head and or tail
+      */
+      if (index == 0) {
+        this.head = node.next;
+        this.size--;
+        return;
+      } else if (index == this.size - 1) {
+        this.pop();
+        return;
+      } else {
+        for (let i = 1; i <= index; i++) {
+          prevNode = node;
+          node = node.next;
+          if (i == index) {
+            let temp = node.next;
+            prevNode.next = temp;
+            return;
+          }
+        }
+      }
+    },
   };
 }
 
@@ -121,5 +151,5 @@ list.append("parrot");
 list.append("hamster");
 list.append("snake");
 list.append("turtle");
-list.insertAt("ape", 2);
+list.removeAt(4);
 list.toString();
