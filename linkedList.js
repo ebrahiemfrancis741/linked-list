@@ -59,7 +59,16 @@ function createLinkedList() {
       }
       return false;
     },
-    find: function (value) {},
+    find: function (value) {
+      let node = this.head;
+      for (let i = 0; i < this.size; i++) {
+        if (node.value == value) {
+          return i;
+        }
+        node = node.next;
+      }
+      return null;
+    },
     toString: function () {
       let node = this.head;
       if (node == null) {
@@ -88,5 +97,4 @@ list.append("snake");
 list.append("turtle");
 list.toString();
 
-if (list.contains("turtle")) console.log("yes");
-else console.log("no");
+console.log(list.find('apple'));
