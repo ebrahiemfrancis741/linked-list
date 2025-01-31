@@ -49,7 +49,16 @@ function createLinkedList() {
       this.tail = node;
       this.size--;
     },
-    contains: function (value) {},
+    contains: function (value) {
+      let node = this.head;
+      for (let i = 0; i < this.size; i++) {
+        if ((node.value = value)) {
+          return true;
+        }
+        node = node.next;
+      }
+      return false;
+    },
     find: function (value) {},
     toString: function () {
       let node = this.head;
@@ -77,7 +86,7 @@ list.append("parrot");
 list.append("hamster");
 list.append("snake");
 list.append("turtle");
-list.pop();
-list.pop();
-list.pop();
 list.toString();
+
+if (list.contains("turtle")) console.log("yes");
+else console.log("no");
