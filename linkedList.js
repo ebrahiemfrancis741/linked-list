@@ -105,6 +105,7 @@ function createLinkedList() {
           if (i == index) {
             prevNode.next = createNode(value);
             prevNode.next.next = node;
+            this.size++;
             return;
           }
         }
@@ -136,6 +137,7 @@ function createLinkedList() {
           if (i == index) {
             let temp = node.next;
             prevNode.next = temp;
+            this.size--;
             return;
           }
         }
