@@ -90,8 +90,8 @@ class LinkedList {
     this.head = new Node(value);
     this.head.next = temp;
     this.size++;
-  }6
-
+  }
+  
   at(index) {
     if (index < 0) {
       return undefined;
