@@ -133,15 +133,44 @@ class LinkedList {
     return false;
   }
 
-  find(value){
+  find(value) {
     let node = this.head;
-      for (let i = 0; i < this.size; i++) {
-        if (node.value == value) {
-          return i;
-        }
-        node = node.next;
+    for (let i = 0; i < this.size; i++) {
+      if (node.value == value) {
+        return i;
       }
-      return null;
+      node = node.next;
+    }
+    return null;
+  }
+
+  insertAt(value, index) {
+    let node = this.head;
+    let prevNode;
+
+    if (index > this.size - 1) {
+      return undefined;
+    }
+
+    // index 0 is a special case, because then we would have to make it
+    // the head
+    if (index == 0) {
+      // use prepend because it does what we want
+      this.prepend(value);
+      return;
+    } else {
+      // start at 1 because we already have the first node
+      for (let i = 1; i <= index; i++) {
+        prevNode = node;
+        node = node.next;
+        if (i == index) {
+          prevNode.next = new Node(value);
+          prevNode.next.next = node;
+          this.size++;
+          return;
+        }
+      }
+    }
   }
 }
 
