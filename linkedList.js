@@ -125,6 +125,7 @@ function createLinkedList() {
       */
       if (index == 0) {
         this.head = node.next;
+        this.tail = null;
         this.size--;
         return;
       } else if (index == this.size - 1) {
