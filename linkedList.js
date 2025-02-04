@@ -1,4 +1,29 @@
-import { createNode } from "./node.js";
+
+class Node {
+  #value;
+  #next;
+
+  constructor(value) {
+    this.#value = value;
+    this.#next = null;
+  }
+
+  set value(value) {
+    this.#value = value;
+  }
+
+  get value() {
+    return this.#value;
+  }
+
+  set next(next) {
+    this.#next = next;
+  }
+
+  get next() {
+    return this.#next;
+  }
+}
 
 function createLinkedList() {
   return {
