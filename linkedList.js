@@ -91,6 +91,24 @@ class LinkedList {
     this.head.next = temp;
     this.size++;
   }
+
+  at(index) {
+    if (index < 0) {
+      return undefined;
+    } else {
+      let i = 0;
+      let value;
+      let node = this.head;
+      while (node != null) {
+        if (i == index) {
+          return node.value;
+        }
+        i++;
+        node = node.next;
+      }
+      return value;
+    }
+  }
 }
 
 function createLinkedList() {
