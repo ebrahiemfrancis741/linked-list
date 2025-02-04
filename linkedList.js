@@ -1,11 +1,10 @@
-
 class Node {
   #value;
   #next;
 
   constructor(value) {
-    this.#value = value;
-    this.#next = null;
+    this.value = value;
+    this.next = null;
   }
 
   set value(value) {
@@ -22,6 +21,53 @@ class Node {
 
   get next() {
     return this.#next;
+  }
+}
+
+class LinkedList {
+  #head;
+  #tail;
+  #size;
+
+  constructor() {
+    this.#head = null;
+    this.#tail = null;
+    this.#size = 0;
+  }
+
+  get head() {
+    return this.#head;
+  }
+
+  set head(head) {
+    this.#head = head;
+  }
+
+  get tail() {
+    return this.#tail;
+  }
+
+  set tail(tail) {
+    this.#tail = tail;
+  }
+
+  get size() {
+    return this.#size;
+  }
+
+  set size(size) {
+    this.#size = size;
+  }
+
+  append() {
+    if (this.size == 0) {
+      this.head = new Node(value);
+      this.tail = this.head;
+    } else {
+      this.tail.next = new Node(value);
+      this.tail = this.tail.next;
+    }
+    this.size++;
   }
 }
 
@@ -172,4 +218,4 @@ function createLinkedList() {
   };
 }
 
-export { createLinkedList };
+export { LinkedList };
