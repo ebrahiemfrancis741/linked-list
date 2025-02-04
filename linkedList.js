@@ -109,6 +109,18 @@ class LinkedList {
       return value;
     }
   }
+
+  pop() {
+    let node = this.head;
+    // loop until 2nd last element
+    for (let i = 1; i <= this.size - 2; i++) {
+      node = node.next;
+    }
+    // remove last element and make element before it the tail
+    node.next = null;
+    this.tail = node;
+    this.size--;
+  }
 }
 
 function createLinkedList() {

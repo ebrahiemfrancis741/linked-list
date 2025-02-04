@@ -9,5 +9,6 @@ list.append("hamster");
 list.append("snake");
 list.append("turtle");
 list.prepend("ape");
+list.pop();
 console.log(list.toString());
 console.log(list.at(3));
