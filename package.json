@@ -1,5 +1,5 @@
 {
-  "name": "linked-list",
+  "name": "ef-linked-list",
   "version": "1.0.0",
   "type": "module",
   "description": "My implementation of the linked list data structure",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/ebrahiemfrancis741/linked-list.git"
   },
-  "keywords": [],
+  "keywords": ["data structure", "linked list"],
   "author": "Ebrahiem Francis",
   "license": "ISC",
   "bugs": {
