@@ -59,7 +59,7 @@ class LinkedList {
     this.#size = size;
   }
 
-  append() {
+  append(value) {
     if (this.size == 0) {
       this.head = new Node(value);
       this.tail = this.head;
@@ -68,6 +68,21 @@ class LinkedList {
       this.tail = this.tail.next;
     }
     this.size++;
+  }
+
+  toString() {
+    let node = this.head;
+    if (node == null) {
+      console.log("( null )");
+      return;
+    }
+    let string = "";
+    while (node != null) {
+      string += `( ${node.value} ) -> `;
+      node = node.next;
+    }
+    string += "null";
+    return string;
   }
 }
 

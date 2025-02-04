@@ -1,6 +1,6 @@
-import { createLinkedList } from "./linkedList.js";
+import { LinkedList } from "./linkedList.js";
 
-let list = createLinkedList();
+let list = new LinkedList();
 
 list.append("dog");
 list.append("cat");
