@@ -84,6 +84,13 @@ class LinkedList {
     string += "null";
     return string;
   }
+
+  prepend(value) {
+    let temp = this.head;
+    this.head = new Node(value);
+    this.head.next = temp;
+    this.size++;
+  }
 }
 
 function createLinkedList() {
