@@ -121,6 +121,17 @@ class LinkedList {
     this.tail = node;
     this.size--;
   }
+
+  contains(value) {
+    let node = this.head;
+    for (let i = 0; i < this.size; i++) {
+      if (node.value == value) {
+        return true;
+      }
+      node = node.next;
+    }
+    return false;
+  }
 }
 
 function createLinkedList() {
